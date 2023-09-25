@@ -97,7 +97,7 @@ class HomeActivity extends StatelessWidget{
             ),
             ListTile(
                 leading: Icon(Icons.email),
-                title: Text("Email A"),
+                title: Text("Email Abid"),
                 onTap: (){MySnackBar("Home", context);}
             ),
             ListTile(
