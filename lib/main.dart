@@ -76,10 +76,20 @@ class HomeActivity extends StatelessWidget{
           }
         },
       ),
-      drawer: Drawer(
+      drawer:  Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("ABID")),
+            DrawerHeader(
+                padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.white70),
+                  accountName: Text("MD ABID", style: TextStyle(color: Colors.black)),
+                  accountEmail: Text("Info@Abid.com", style: TextStyle(color: Colors.black)),
+                  currentAccountPicture:  Image.network("https://cdn.icon-icons.com/icons2/3398/PNG/512/flutter_logo_icon_214732.png"),
+
+                )
+
+            ),
             ListTile(
               leading: Icon(Icons.home),
               title: Text("Home"),
@@ -109,6 +119,88 @@ class HomeActivity extends StatelessWidget{
           ],
         ),
       ),
+      endDrawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+                padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.white70),
+              accountName: Text("MD ABID", style: TextStyle(color: Colors.black)),
+              accountEmail: Text("Info@Abid.com", style: TextStyle(color: Colors.black)),
+                  currentAccountPicture:  Image.network("https://cdn.icon-icons.com/icons2/3398/PNG/512/flutter_logo_icon_214732.png"),
+
+             )
+
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: (){MySnackBar("Home", context);},
+            ),
+            ListTile(
+                leading: Icon(Icons.contact_mail),
+                title: Text("Contact"),
+                onTap: (){MySnackBar("Contact", context);}
+            ),
+            ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                onTap: (){MySnackBar("Profile", context);}
+            ),
+            ListTile(
+                leading: Icon(Icons.email),
+                title: Text("Email Abid"),
+                onTap: (){MySnackBar("Home", context);}
+            ),
+            ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("Phone"),
+                onTap: (){MySnackBar("Home", context);}
+            ),
+
+          ],
+        ),
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            height:100,
+            width: 100,
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.fromLTRB(10, 5, 5, 5),
+            decoration: BoxDecoration(
+                color: Colors.pink,
+                border: Border.all(color: Colors.black, width: 6)
+            ),
+            child: Image.network("https://cdn.icon-icons.com/icons2/3398/PNG/512/flutter_logo_icon_214732.png"),
+          ),
+          Container(
+            height:100,
+            width: 100,
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.all(3),
+
+            decoration: BoxDecoration(
+                color: Colors.pink,
+                border: Border.all(color: Colors.black, width: 6)
+            ),
+            child: Image.network("https://cdn.icon-icons.com/icons2/3398/PNG/512/flutter_logo_icon_214732.png"),
+          ),
+          Container(
+            height:100,
+            width: 100,
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.fromLTRB(5, 5, 10, 5),
+            decoration: BoxDecoration(
+                color: Colors.pink,
+                border: Border.all(color: Colors.black, width: 6)
+            ),
+            child: Image.network("https://cdn.icon-icons.com/icons2/3398/PNG/512/flutter_logo_icon_214732.png"),
+          )
+        ],
+      )
     );
   }
 }
